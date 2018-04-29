@@ -12,8 +12,9 @@ body {
 }
 
 img {
+    width: 100%;
     -webkit-filter: drop-shadow(2px 2px 2px #02010a);
-    filter: drop-shadow(2px 2px 2px #02010a)
+    filter: drop-shadow(2px 2px 2px #02010a);
 }
 
 .contenido {
@@ -51,14 +52,12 @@ img {
     padding: 1vw 1vh;
 }
 
-#menu-nav>a::selection {
+::-moz-selection {
     text-decoration: none;
 }
 
-@media (min-width: 900px) {
-    .contenido {
-        width: 900px;
-    }
+::selection {
+    text-decoration: none;
 }
 
 .box-encabezado-menu {
@@ -66,4 +65,59 @@ img {
     width: 100%;
     background: #5b7989;
     border-radius: 10px 10px 0px 0px;
+}
+
+.box-central {
+    color: white;
+    background: #82c3a6;
+    width: 100%;
+    text-align: center;
+}
+
+#img-central {
+    width: 90%;
+    padding: 1vw 1vh;
+    margin: 1vw 1vh;
+}
+
+.box-secundario {
+    color: #02010a;
+    background: #d5c75f;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.row-secundario {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-secundario a {
+    color: #02010a;
+    font-size: 1.25em;
+}
+
+.img-secundaria {
+    width: 100%;
+    border: solid 1px #02010a;
+}
+
+@media (min-width: 900px) {
+    .contenido {
+        width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #img-central {
+        width: 75%;
+        padding: 1vw 1vh;
+        margin: 1vw 1vh;
+    }
+    .row-secundario {
+        display: flex;
+        flex-direction: row;
+    }
 }
