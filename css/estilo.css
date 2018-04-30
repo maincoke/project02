@@ -1,5 +1,9 @@
 /* ** Hoja de Estilos de Sitio PhotographCoke ** */
 
+
+/* ----// Configuraciones Generales \\---- 
+==========================================*/
+
 @font-face {
     font-family: Dancing Script;
     src: url(../fuentes/Dancing-Script.ttf);
@@ -17,6 +21,10 @@ img {
     filter: drop-shadow(2px 2px 2px #02010a);
 }
 
+
+/* ----// Contenedor Padre del Cuerpo de página \\----
+======================================================*/
+
 .contenido {
     margin: 0;
     padding: 0;
@@ -27,10 +35,15 @@ img {
     flex-flow: row wrap;
 }
 
+
+/* ----// Encabezado: Título y Menú de Navegación \\----
+========================================================*/
+
 .box-encabezado-menu {
     color: white;
     width: 100%;
     background: #5b7989;
+    padding: 2em 0.5em;
     border-radius: 10px 10px 0px 0px;
     align-content: center;
     text-align: center;
@@ -40,16 +53,20 @@ img {
 
 #encabezado {
     color: white;
-    font-size: 1em;
-    padding: 0 1em 0 1em;
-    margin: 0 auto;
+    padding: 0 1em;
     text-shadow: 2px 2px 2px #02010a;
     text-align: center;
     display: flex;
     flex-direction: column;
 }
 
+#encabezado h1 {
+    margin: 0;
+}
+
 #menu-nav {
+    padding: 0 1em;
+    margin: 0 auto;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -57,6 +74,7 @@ img {
 
 #menu-nav ul {
     width: 100%;
+    padding: 0;
     list-style: none;
     text-align: center;
     margin: auto;
@@ -65,7 +83,7 @@ img {
 #menu-nav li {
     margin: 0;
     display: inline;
-    padding: 0.5em 0.5em 0.5em 0.5em;
+    padding: 0.5em 0 0.5em 1em;
 }
 
 #menu-nav li a {
@@ -77,6 +95,10 @@ img {
     margin: 0;
 }
 
+
+/* ----// Contenido: Sección Principal * Imagen Central \\---
+=============================================================*/
+
 .box-central {
     color: white;
     background: #82c3a6;
@@ -86,9 +108,13 @@ img {
 
 #img-central {
     width: 90%;
-    padding: 1vw 1vh;
-    margin: 1vw 1vh;
+    padding: 1vh 1vw;
+    margin: 1vh 1vw;
 }
+
+
+/* ----// Contenido: Sección Secundaria * Imagenes de Enlace \\----
+===================================================================*/
 
 .box-secundario {
     color: #02010a;
@@ -110,10 +136,30 @@ img {
     font-size: 1.25em;
 }
 
-.img-secundaria {
+img[class^="img-secundaria"] {
     width: 100%;
     border: solid 1px #02010a;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-in-out;
 }
+
+.img-secundaria-psj:hover {
+    transform: rotate(10deg);
+    border: solid 2px #82c3a6;
+    -webkit-filter: drop-shadow(2px 2px 2px #82c3a6);
+    filter: drop-shadow(2px 2px 2px #82c3a6);
+}
+
+.img-secundaria-rtt:hover {
+    transform: translate(20px, -5px);
+    border: solid 2px #82c3a6;
+    -webkit-filter: drop-shadow(2px 2px 2px #82c3a6);
+    filter: drop-shadow(2px 2px 2px #82c3a6);
+}
+
+
+/* ----// Estilo Adaptativo: Cambio de Propiedades de Elementos, ID y Clases \\----
+===================================================================================*/
 
 @media (min-width: 900px) {
     .contenido {
@@ -122,21 +168,19 @@ img {
         margin-right: auto;
     }
     .box-encabezado-menu {
-        padding: auto 1em;
         display: block;
     }
     #encabezado {
         float: left;
-        padding: 1vh 1vw;
-        margin: auto 2vw;
+        margin: 0.5em 1em;
     }
     #menu-nav {
         float: right;
-        padding: 1vh 1vw;
-        margin: auto 2vw;
+        padding: 0.5em 1em;
+        margin: 0.5em 1em;
     }
     #menu-nav ul {
-        width: 300px;
+        width: 250px;
         list-style: none;
         text-align: center;
     }
