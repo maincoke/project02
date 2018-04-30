@@ -27,44 +27,54 @@ img {
     flex-flow: row wrap;
 }
 
-#encabezado {
-    color: white;
-    font-size: 1em;
-    text-shadow: 2px 2px 2px #02010a;
-    padding: 1vw;
-    margin: 1vw;
-    text-align: center;
-    float: left;
-}
-
-#menu-nav {
-    align-content: center;
-    padding: 2vw;
-    margin: 2vw;
-    float: right;
-}
-
-#menu-nav a {
-    color: white;
-    font-size: 1.5em;
-    text-shadow: 2px 2px 2px #02010a;
-    margin: 1vw 1vh;
-    padding: 1vw 1vh;
-}
-
-::-moz-selection {
-    text-decoration: none;
-}
-
-::selection {
-    text-decoration: none;
-}
-
 .box-encabezado-menu {
     color: white;
     width: 100%;
     background: #5b7989;
     border-radius: 10px 10px 0px 0px;
+    align-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#encabezado {
+    color: white;
+    font-size: 1em;
+    padding: 0 1em 0 1em;
+    margin: 0 auto;
+    text-shadow: 2px 2px 2px #02010a;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#menu-nav {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#menu-nav ul {
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    margin: auto;
+}
+
+#menu-nav li {
+    margin: 0;
+    display: inline;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+}
+
+#menu-nav li a {
+    color: white;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 2px #02010a;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
 }
 
 .box-central {
@@ -111,10 +121,29 @@ img {
         margin-left: auto;
         margin-right: auto;
     }
+    .box-encabezado-menu {
+        padding: auto 1em;
+        display: block;
+    }
+    #encabezado {
+        float: left;
+        padding: 1vh 1vw;
+        margin: auto 2vw;
+    }
+    #menu-nav {
+        float: right;
+        padding: 1vh 1vw;
+        margin: auto 2vw;
+    }
+    #menu-nav ul {
+        width: 300px;
+        list-style: none;
+        text-align: center;
+    }
     #img-central {
         width: 75%;
-        padding: 1vw 1vh;
-        margin: 1vw 1vh;
+        padding: 1vh 1vw;
+        margin: 1vh 1vw;
     }
     .row-secundario {
         display: flex;
