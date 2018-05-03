@@ -51,6 +51,27 @@ img {
     flex-direction: column;
 }
 
+
+/* ----// Efecto de animación SlideIn: Cabecera Animada con efecto de subida y bajada \\---
+===========================================================================================*/
+
+.box-encabezado-menu {
+    animation: slidein 1s;
+    -webkit-animation: slidein 1s;
+}
+
+@keyframes slidein {
+    0% {
+        margin-top: 150%;
+    }
+    60% {
+        margin-top: -5%;
+    }
+    100% {
+        margin-top: 0%;
+    }
+}
+
 #encabezado {
     color: white;
     padding: 0 1em;
@@ -93,6 +114,13 @@ img {
     display: inline-block;
     text-align: center;
     margin: 0;
+}
+
+
+/* ---// Efecto Menú: Opción de menú seleccionado \\---*/
+
+#menu-nav .activado a:link {
+    text-decoration-line: none;
 }
 
 
@@ -143,6 +171,10 @@ img[class^="img-secundaria"] {
     transition-timing-function: ease-in-out;
 }
 
+
+/* ----// Efectos de Transformación de Imágenes de Cuerpo Secundario en index \\----
+====================================================================================*/
+
 .img-secundaria-psj:hover {
     transform: rotate(10deg);
     border: solid 2px #82c3a6;
@@ -155,6 +187,42 @@ img[class^="img-secundaria"] {
     border: solid 2px #82c3a6;
     -webkit-filter: drop-shadow(2px 2px 2px #82c3a6);
     filter: drop-shadow(2px 2px 2px #82c3a6);
+}
+
+
+/* ----// Contenido de Galeria de Imágenes: Estilo y efectos a Imágenes de las Galerias del sitio web  \\----
+=============================================================================================================*/
+
+.box-galeria {
+    color: #02010a;
+    background: #d5c75f;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+}
+
+.row-galeria {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+.row-galeria figure:first-child {
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
+}
+
+.row-galeria figure:nth-child(3) {
+    -webkit-filter: sepia(90%);
+    filter: sepia(90%);
+}
+
+.row-galeria figure:nth-child(even) {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 
 
@@ -173,7 +241,7 @@ img[class^="img-secundaria"] {
 div[class|="foot"] {
     width: 100%;
     text-align: justify;
-    margin: 1vh 0 0.5vh 10vw;
+    margin: 0.5vh 0 0.5vh 10vw;
 }
 
 div[class|="foot"] p,
@@ -188,9 +256,9 @@ div[class|="foot"] li {
 }
 
 img[id|="ico"] {
-    width: 15px;
-    -webkit-filter: none;
-    filter: none;
+    width: 15px !important;
+    -webkit-filter: none !important;
+    filter: none !important;
 }
 
 
@@ -236,11 +304,24 @@ img[id|="ico"] {
         display: flex;
         flex-direction: row;
     }
+    /* ------// Cont. Galeria\\------ */
+    .row-galeria figure {
+        margin: 10px 20px;
+        width: 260px;
+    }
+    .box-galeria {
+        width: 900px;
+    }
+    .row-galeria {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-flow: wrap;
+    }
     /* ----//   Pié de Página   \\---- */
     div[class|="foot"] {
         width: 225px;
         clear: both;
-        margin: 10px 0px 10px 40px;
+        margin: 0px 0px 0px 40px;
         padding: 0;
         font-size: 1.25em;
     }
